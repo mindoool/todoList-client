@@ -1,4 +1,3 @@
-<md-list-item>
-    <p> {{todo.title}}: {{todo.description}}</p>
-    <md-checkbox class="md-secondary"></md-checkbox>
-</md-list-item>
+<input type="checkbox" ng-model="todo.completed"/>
+    {{todo.title}}
+<button type="button" ng-click="$parent.deleteTodo(todo)"> &times; </button>
