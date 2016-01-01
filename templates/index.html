@@ -1,0 +1,13 @@
+hi
+
+<div ng-controller="ToDoListController">
+    <ul>
+        <li ng-repeat="todo in todoList">
+            <todo todo="todo"></todo>
+        </li>
+        <li ng-show="newTodo.length > 0"> {{newTodo}} </li>
+    </ul>
+    <form ng-submit="addTodo()">
+        <input type="text" ng-model="newTodo"/>
+    </form>
+</div>
