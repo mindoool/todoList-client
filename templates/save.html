@@ -1,1 +1,23 @@
-hi
+<div ng-controller="SavedController">
+    <p>Saved Work</p>
+    <ul>
+        <li ng-repeat="savedtodo in savedToDoList">
+            <saved savedtodo="savedtodo"></saved>
+        </li>
+    </ul>
+</div>
+<hr>
+
+<div ng-controller="GuideController">
+    <p>Guide</p>
+    <ul>
+        <li ng-repeat="guide in guideList">
+            <guide guide="guide"></guide>
+        </li>
+        <li ng-show="newGuide.length > 0"> {{newGuide}} </li>
+    </ul>
+    <form ng-submit="addGuide()">
+        <input type="text" ng-model="newGuide"/>
+    </form>
+</div>
+<hr>

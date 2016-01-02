@@ -10,10 +10,9 @@ app.controller('RegularController', ['$scope', 'storage', function ($scope, stor
         storage.set('regularToDoList', $scope.regularToDoList);
         $scope.regularNewTodo = "";
     };
-    console.log($scope.regularToDoList)
 
-    $scope.deleteRegularToDo = function (regularToDo) {
-        var index = $scope.regularToDoList.indexOf(regularToDo);
+    $scope.deleteRegularToDo = function (regulartodo) {
+        var index = $scope.regularToDoList.indexOf(regulartodo);
         $scope.regularToDoList.splice(index, 1);
         storage.set('regularToDoList', $scope.regularToDoList);
     };
