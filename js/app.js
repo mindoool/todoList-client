@@ -10,6 +10,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('index', {
             url:'/',
             templateUrl: 'templates/index.html',
-            controller: "MainController"
+            controller: "ToDoListController"
+        })
+        .state('saves', {
+            url:'/saves',
+            templateUrl: 'templates/save.html',
+            controller: "SaveController"
         });
 });

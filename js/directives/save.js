@@ -1,9 +1,9 @@
-app.directive('todo', function(){
+app.directive('save', function(){
     return {
         restrict: 'E',
         scope: {
             todo: '='
         },
-        templateUrl: 'templates/directives/todo.html'
+        templateUrl: 'templates/directives/save.html'
     };
 });
