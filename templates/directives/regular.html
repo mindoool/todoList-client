@@ -1,3 +1,4 @@
-<input type="checkbox" ng-model="regulartodo.completed"/>
+<md-checkbox class="green" ng-model="regulartodo.completed">
     {{regulartodo.title}}
-<button type="button" ng-click="$parent.deleteRegularToDo(regulartodo)"> &times; </button>
+    <button type="button" ng-click="$parent.deleteRegularToDo(regulartodo)"> &times; </button>
+</md-checkbox>

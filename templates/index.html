@@ -1,40 +1,51 @@
-<div ng-controller="InstantController">
-    <p>Instant Work</p>
-    <ul>
-        <li ng-repeat="todo in todoList">
-            <instant todo="todo"></instant>
-        </li>
-        <li ng-show="newTodo.length > 0"> {{newTodo}} </li>
-    </ul>
-    <form ng-submit="addTodo()">
-        <input type="text" ng-model="newTodo"/>
-    </form>
+<div layout="row" class="zero">
+    <div ng-controller="InstantController" flex="33" class="one">
+        <p>Instant Work</p>
+        <ul>
+            <li ng-repeat="todo in todoList">
+                <instant todo="todo"></instant>
+            </li>
+            <li ng-show="newTodo.length > 0"> {{newTodo}} </li>
+        </ul>
+        <form ng-submit="addTodo()">
+            <input type="text" ng-model="newTodo"/>
+        </form>
+    </div>
+    <hr>
+
+    <div ng-controller="MainController" flex="33" class="two">
+        <p>Main Work</p>
+        <ul>
+            <li ng-repeat="maintodo in mainToDoList">
+                <main maintodo="maintodo"></main>
+            </li>
+            <li ng-show="mainNewTodo.length > 0"> {{mainNewTodo}} </li>
+        </ul>
+        <form ng-submit="addMainToDo()">
+            <input type="text" ng-model="mainNewTodo"/>
+        </form>
+    </div>
+    <hr>
+
+    <div ng-controller="RegularController" flex="33" class="three">
+        <p>Regular Work</p>
+        <ul>
+            <li ng-repeat="regulartodo in regularToDoList">
+                <regular regulartodo="regulartodo"></regular>
+            </li>
+            <li ng-show="regularNewTodo.length > 0"> {{regularNewTodo}} </li>
+        </ul>
+        <form ng-submit="addRegularToDo()">
+            <input type="text" ng-model="regularNewTodo"/>
+        </form>
+    </div>
 </div>
 <hr>
-
-<div ng-controller="MainController">
-    <p>Main Work</p>
+<div ng-controller="CompletedController">
+    <p>Completed Work</p>
     <ul>
-        <li ng-repeat="maintodo in mainToDoList">
-            <main maintodo="maintodo"></main>
+        <li ng-repeat="completedtodo in completedToDoList">
+            <completed completedtodo="completedtodo"></completed>
         </li>
-        <li ng-show="mainNewTodo.length > 0"> {{mainNewTodo}} </li>
     </ul>
-    <form ng-submit="addMainToDo()">
-        <input type="text" ng-model="mainNewTodo"/>
-    </form>
-</div>
-<hr>
-
-<div ng-controller="RegularController">
-    <p>Regular Work</p>
-    <ul>
-        <li ng-repeat="regulartodo in regularToDoList">
-            <regular regulartodo="regulartodo"></regular>
-        </li>
-        <li ng-show="regularNewTodo.length > 0"> {{regularNewTodo}} </li>
-    </ul>
-    <form ng-submit="addRegularToDo()">
-        <input type="text" ng-model="regularNewTodo"/>
-    </form>
 </div>
