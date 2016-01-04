@@ -17,6 +17,8 @@ app.controller('SavedController', ['$scope', 'storage', function ($scope, storag
         storage.set('savedToDoList', $scope.savedToDoList);
     };
 
+    $scope.mainDate = new Date();
+
     //$scope.deleteTodo = function($index) {
     //    $scope.todoList.splice($index, 1);
     //};

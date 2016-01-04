@@ -13,7 +13,7 @@
     </div>
     <hr>
 
-    <div ng-controller="MainController" flex="33" class="two">
+    <div ng-controller="MainController" flex="33" class="two" ng-cloak>
         <p>Main Work</p>
         <ul>
             <li ng-repeat="maintodo in mainToDoList">
@@ -23,6 +23,7 @@
         </ul>
         <form ng-submit="addMainToDo()">
             <input type="text" ng-model="mainNewTodo"/>
+            <md-datepicker ng-model="mainDate" md-placeholder="Enter date"></md-datepicker>
         </form>
     </div>
     <hr>
