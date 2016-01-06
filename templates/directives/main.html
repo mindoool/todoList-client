@@ -1,4 +1,18 @@
-<md-checkbox class="green" ng-model="maintodo.completed">
-    {{maintodo.title}}
-    <button type="button" ng-click="$parent.deleteMainToDo(maintodo)"> &times; </button>
-</md-checkbox>
+<div layout="row" class="zero">
+    <div flex="5">
+        <md-checkbox class="green" ng-model="maintodo.completed"></md-checkbox>
+    </div>
+    <div flex="20">
+        <input type="text" class="read-input" ng-readonly="checked" value="{{maintodo.title}}" aria-label="title field" />
+    </div>
+    <div flex="45">
+        <input type="text" class="read-input" ng-readonly="!item.edit" ng-repeat="item in maintodo.items" ng-model="item.name" aria-label="item field" ng-click="item.edit = true" ng-keydown="$event.keyCode == 13 && (item.edit = false)" />
+        <br>
+    </div>
+    <div flex="15">
+        <input type="text" class="read-input" ng-readonly="checked" value="{{maintodo.due | date:'yy-MM-dd'}}" aria-label="due field" />
+    </div>
+    <div flex="10">
+        <button type="button" ng-click="$parent.deleteMainToDo(maintodo)"> &times; </button>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.title {
+    width : 90%;
+    margin-top : 8px;
+}
+
+.items {
+    width : 90%;
+    margin-top : 8px;
+}
+
+.submit {
+    width : 90%;
+    margin-top : 17px;
+}
+
+.read-input {
+    width : 90%;
+}
+
+.read-input[readonly] {
+    border:none;
+}

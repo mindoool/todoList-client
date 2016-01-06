@@ -1,46 +1,56 @@
 <div layout="row" class="zero">
-    <div ng-controller="InstantController" flex="33" class="one">
+    <div ng-controller="InstantController" flex="20" class="one">
         <p>Instant Work</p>
         <ul>
-            <li ng-repeat="todo in todoList">
+            <li ng-repeat="todo in todoList | filter: {completed:false}">
                 <instant todo="todo"></instant>
             </li>
-            <li ng-show="newTodo.length > 0"> {{newTodo}} </li>
+            <li ng-show="newTodo.length > 0"> {{newTodo}}</li>
         </ul>
         <form ng-submit="addTodo()">
-            <input type="text" ng-model="newTodo"/>
-            <input type="submit" value="Submit">
+            <input type="text" ng-model="newTodo" class="title"/>
+            <md-button type="submit" class="submit"> Submit</md-button>
         </form>
     </div>
     <hr>
 
-    <div ng-controller="MainController" flex="33" class="two" ng-cloak>
+    <div ng-controller="MainController" flex="50" class="two" ng-cloak>
         <p>Main Work</p>
-        <ul>
-            <li ng-repeat="maintodo in mainToDoList">
-                <main maintodo="maintodo"></main>
-            </li>
-            <li ng-show="mainNewTodo.length > 0"> {{mainNewTodo}} </li>
-        </ul>
+
+        <span ng-repeat="maintodo in mainToDoList">
+            <main maintodo="maintodo"></main>
+        </span>
+        <li ng-show="mainNewTodo.length > 0"> {{mainNewTodo}}</li>
         <form ng-submit="addMainToDo()">
-            <label for="title">Title</label>
-            <input type="text" ng-model="mainNewTodo"/>
-            <label for="description">Description</label>
-            <input type="text"/>
-            <label for="mainDate">Due</label>
-            <md-datepicker ng-model="mainDate" md-placeholder="Enter date"></md-datepicker>
-            <input type="submit" value="Submit">
+            <div layout="row" class="zero">
+                <div flex="15">
+                    <label>Title</label><br>
+                    <input type="text" ng-model="mainNewTodo.title" class="title"/>
+                </div>
+                <div flex="40">
+                    <label>Items</label><br>
+                    <input type="text" ng-repeat="item in mainNewTodo.items" ng-model="item.name" class="items"/>
+                    <md-button ng-click="addItem()"> +</md-button>
+                </div>
+                <div flex="30">
+                    <label>Due</label><br>
+                    <md-datepicker ng-model="mainNewTodo.due" md-placeholder="Enter date"></md-datepicker>
+                </div>
+                <div flex="15">
+                    <md-button type="submit" class="md-raised submit"> Submit</md-button>
+                </div>
+            </div>
         </form>
     </div>
     <hr>
 
-    <div ng-controller="RegularController" flex="33" class="three">
+    <div ng-controller="RegularController" flex="30" class="three">
         <p>Regular Work</p>
         <ul>
             <li ng-repeat="regulartodo in regularToDoList">
                 <regular regulartodo="regulartodo"></regular>
             </li>
-            <li ng-show="regularNewTodo.length > 0"> {{regularNewTodo}} </li>
+            <li ng-show="regularNewTodo.length > 0"> {{regularNewTodo}}</li>
         </ul>
         <form ng-submit="addRegularToDo()">
             <input type="text" ng-model="regularNewTodo"/>

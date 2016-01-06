@@ -1,4 +1,4 @@
-var app = angular.module('ToDoList', ['ngMaterial','ui.router']);
+var app = angular.module('ToDoList', ['ngMaterial','ngMessages','ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     //
