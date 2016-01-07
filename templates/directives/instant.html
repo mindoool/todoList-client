@@ -1,4 +1,11 @@
-<md-checkbox class="green" ng-model="todo.completed">
-    {{todo.title}}
-</md-checkbox>
-<button type="button" ng-click="$parent.deleteTodo(todo)"> &times; </button>
+<div layout="row">
+    <div flex="10">
+        <md-checkbox class="green" ng-model="todo.completed"></md-checkbox>
+    </div>
+    <div flex="75">
+        {{todo.title}}
+    </div>
+    <div flex="20">
+        <button type="button" ng-click="$parent.deleteTodo(todo)"> &times; </button>
+    </div>
+</div>

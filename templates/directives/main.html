@@ -1,18 +1,19 @@
-<div layout="row" class="zero">
+<div layout="row">
     <div flex="5">
         <md-checkbox class="green" ng-model="maintodo.completed"></md-checkbox>
     </div>
     <div flex="20">
-        <input type="text" class="read-input" ng-readonly="checked" value="{{maintodo.title}}" aria-label="title field" />
+        <input type="text" class="read-input" ng-readonly="!title.edit" ng-model="maintodo.title" ng-click="title.edit = true" ng-keydown="$event.keyCode == 13 && (title.edit = false)" aria-label="title field" />
     </div>
     <div flex="45">
         <input type="text" class="read-input" ng-readonly="!item.edit" ng-repeat="item in maintodo.items" ng-model="item.name" aria-label="item field" ng-click="item.edit = true" ng-keydown="$event.keyCode == 13 && (item.edit = false)" />
+        <md-button ng-click="addItem()"> + </md-button>
         <br>
     </div>
-    <div flex="15">
-        <input type="text" class="read-input" ng-readonly="checked" value="{{maintodo.due | date:'yy-MM-dd'}}" aria-label="due field" />
+    <div flex="20">
+        <md-datepicker class="read-input" ng-readonly="!due.edit" ng-model="maintodo.due" ng-click="due.edit = true" ng-keydown="$event.keyCode == 13 && (due.edit = false)" aria-label="due field"></md-datepicker>
     </div>
-    <div flex="10">
+    <div flex="5">
         <button type="button" ng-click="$parent.deleteMainToDo(maintodo)"> &times; </button>
     </div>
 </div>

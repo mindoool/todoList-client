@@ -6,14 +6,22 @@
 
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="css/todolist.css">
+    <link rel="stylesheet" href="css/saves.css">
 </head>
 <body ng-app="ToDoList">
 
-<p><a href="#/index">To do List</a></p>
-<p><a href="#/saves">Saves</a></p>
-
-<ui-view></ui-view>
+<div layout="row">
+    <div flex="10">
+        <p><a href="#/index" class="menu">To do List</a></p>
+        <p><a href="#/saves" class="menu">Saves</a></p>
+    </div>
+    <hr>
+    <div flex="90">
+        <ui-view></ui-view>
+    </div>
+</div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
