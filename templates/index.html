@@ -16,7 +16,7 @@
                     <label>Title</label><br>
                     <input type="text" ng-model="mainNewTodo.title" class="title"/>
                 </div>
-                <div flex="45">
+                <div flex="50">
                     <label>Items</label><br>
                     <input type="text" ng-repeat="item in mainNewTodo.items" ng-model="item.name" class="items"/>
                     <md-button ng-click="addItem()"> + </md-button>
@@ -25,7 +25,7 @@
                     <label>Due</label><br>
                     <md-datepicker ng-model="mainNewTodo.due" md-placeholder="Enter date"></md-datepicker>
                 </div>
-                <div flex="15">
+                <div flex="10">
                     <md-button type="submit" class="md-raised md-warn submit"> Submit</md-button>
                 </div>
             </div>
@@ -60,11 +60,21 @@
                 <li ng-show="regularNewTodo.length > 0"> {{regularNewTodo}}</li>
                 <form ng-submit="addRegularToDo()">
                     <div layout="row">
-                        <div flex="70">
-                            <input type="text" ng-model="regularNewTodo" class="title"/>
+                        <div flex="15" class="left">
+                            <label>Title</label><br>
+                            <input type="text" ng-model="regularNewTodo.title" class="title"/>
                         </div>
-                        <div flex="30">
-                            <md-button type="submit" class="md-raised md-warn"> Submit</md-button>
+                        <div flex="45">
+                            <label>Items</label><br>
+                            <input type="text" ng-repeat="item in regularNewTodo.items" ng-model="item.name" class="items"/>
+                            <md-button ng-click="addItem()"> + </md-button>
+                        </div>
+                        <div flex="25">
+                            <label>Due</label><br>
+                            <md-datepicker ng-model="regularNewTodo.due" md-placeholder="Enter date"></md-datepicker>
+                        </div>
+                        <div flex="10">
+                            <md-button type="submit" class="md-raised md-warn submit"> Submit</md-button>
                         </div>
                     </div>
                 </form>

@@ -1,14 +1,16 @@
 app.controller('RegularController', ['$scope', 'storage', function ($scope, storage) {
     $scope.regularToDoList = storage.get('regularToDoList') || [];
-    $scope.regularNewTodo = "";
+    $scope.regularNewTodo = {
+        title: "",
+        items: [{name:''}],
+        due:null,
+        completed: false
+    };
 
     $scope.addRegularToDo = function () {
-        $scope.regularToDoList.push({
-            title: $scope.regularNewTodo,
-            completed: false
-        });
+        $scope.regularToDoList.push($scope.regularNewTodo);
         storage.set('regularToDoList', $scope.regularToDoList);
-        $scope.regularNewTodo = "";
+        $scope.initialize();
     };
 
     $scope.deleteRegularToDo = function (regulartodo) {
@@ -17,6 +19,18 @@ app.controller('RegularController', ['$scope', 'storage', function ($scope, stor
         storage.set('regularToDoList', $scope.regularToDoList);
     };
 
+    $scope.addItem = function () {
+        $scope.regularNewTodo.items.push({name:''})
+    };
+
+    $scope.initialize = function() {
+        $scope.regularNewTodo = {
+            title: "",
+            items: [{name:''}],
+            due:null,
+            completed: false
+        };
+    };
     //$scope.deleteTodo = function($index) {
     //    $scope.todoList.splice($index, 1);
     //};
