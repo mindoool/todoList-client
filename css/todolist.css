@@ -19,6 +19,7 @@
 
 .read-input {
     width : 90%;
+    margin-top: 10px;
 }
 
 .read-input[readonly] {

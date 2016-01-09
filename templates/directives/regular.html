@@ -1,6 +1,6 @@
 <div layout="row">
     <div flex="5">
-        <md-checkbox class="green" ng-model="regulartodo.completed"></md-checkbox>
+        <md-checkbox class="green read-input" ng-model="regulartodo.completed"></md-checkbox>
     </div>
     <div flex="20">
         <input type="text" class="read-input" ng-readonly="!title.edit" ng-model="regulartodo.title" ng-click="title.edit = true" ng-keydown="$event.keyCode == 13 && (title.edit = false)" aria-label="title field" />
