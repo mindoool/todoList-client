@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92d13f68-3710-47ac-8e18-42f4c4e54109" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/directives/main.html" afterPath="$PROJECT_DIR$/templates/directives/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/directives/regular.html" afterPath="$PROJECT_DIR$/templates/directives/regular.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/todolist.css" afterPath="$PROJECT_DIR$/css/todolist.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="todoList.iws" />
@@ -58,20 +56,20 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="regular.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="regular.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/directives/regular.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-4.375">
-                  <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+                <state vertical-scroll-proportion="0.48387095">
+                  <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/directives/main.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.08064516">
+                <state vertical-scroll-proportion="-1.25">
                   <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
                   <folding />
                 </state>
@@ -150,8 +148,8 @@
         <option value="$PROJECT_DIR$/js/directives/regular.js" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/css/todolist.css" />
-        <option value="$PROJECT_DIR$/templates/directives/regular.html" />
         <option value="$PROJECT_DIR$/templates/directives/main.html" />
+        <option value="$PROJECT_DIR$/templates/directives/regular.html" />
       </list>
     </option>
   </component>
@@ -762,18 +760,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/directives/regular.html">
+    <entry file="file://$PROJECT_DIR$/templates/directives/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/directives/main.html">
+    <entry file="file://$PROJECT_DIR$/templates/directives/regular.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08064516">
-          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.48387095">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
           <folding />
         </state>
       </provider>
