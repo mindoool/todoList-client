@@ -7,6 +7,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
     //
     // Now set up the states
     $stateProvider
+        .state('login', {
+            url:'/login',
+            templateUrl: 'templates/login.html',
+            controller: "LoginController"
+        })
         .state('index', {
             url:'/',
             templateUrl: 'templates/index.html',
