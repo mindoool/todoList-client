@@ -1,4 +1,4 @@
-app.controller('LoginController',['$scope','ApiService','$mdDialog', '$mdMedia', function($scope, ApiService, $mdDialog, $mdMedia){
+app.controller('LoginController',['$scope','ApiService','$mdDialog', '$mdMedia', '$http', 'storage','$state', function($scope, ApiService, $mdDialog, $mdMedia, $http, storage, $state ){
     $scope.data = [];
     ApiService.getData(function(data){
         $scope.data = data.data;
@@ -7,7 +7,18 @@ app.controller('LoginController',['$scope','ApiService','$mdDialog', '$mdMedia',
     $scope.user = {
         email:"",
         password:""
-    }
+    };
+
+    $scope.login = function () {
+        console.log('hi')
+        $http.post('http://localhost:11080/api/users/login', $scope.user)
+            .then(function(response) {
+                storage.set('token', response.data.token);
+                $scope.$root.token = response.data.token
+                $http.defaults.headers.common.Authorization = storage.get('token');
+                $state.go('index');
+            });
+    };
 
     $scope.status = '  ';
     $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
@@ -43,6 +54,21 @@ app.controller('LoginController',['$scope','ApiService','$mdDialog', '$mdMedia',
         };
         $scope.answer = function(answer) {
             $mdDialog.hide(answer);
+        };
+        $scope.user = {
+            email:"",
+            password:"",
+            passwordCheck:""
+        }
+        $scope.signUp = function() {
+            var userData = {
+                email:$scope.user.email,
+                password:$scope.user.password
+            }
+            $http.post('http://localhost:11080/api/users',userData)
+                .then(function(response) {
+                    console.log(response)
+                });
         };
     }
 }]);

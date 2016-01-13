@@ -1,4 +1,5 @@
 <div ng-controller="LoginController">
+    <form ng-submit="login()">
     <md-content class="autoScroll">
         <md-input-container class="md-block signin">
             <!-- Use floating placeholder instead of label -->
@@ -9,7 +10,8 @@
             <input ng-model="user.password" type="password" placeholder="Password (required)" ng-required="true">
         </md-input-container>
     </md-content>
-    <md-button class="md-raised md-block">Sign in</md-button>
+    <md-button type="submit" class="md-raised md-block">Sign in</md-button>
+    </form>
     <br>
     <md-button class="md-raised md-warn" ng-click="showAdvanced($event)" flex="100" flex-gt-md="auto">Sign up</md-button>
 </div>

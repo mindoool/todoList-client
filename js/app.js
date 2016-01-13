@@ -23,3 +23,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: "SaveController"
         });
 });
+
+app.run(function($http, storage) {
+    $http.defaults.headers.common.Authorization = storage.get('token');
+});
