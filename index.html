@@ -14,9 +14,10 @@
 
 <div layout="row">
     <div flex="10">
-        <p ng-if=""><a href="#/login" class="menu">Login</a></p>
+        <p ng-show="!$root.token"><a href="#/login" class="menu">Login</a></p>
         <p><a href="#/index" class="menu">To do List</a></p>
         <p><a href="#/saves" class="menu">Saves</a></p>
+        <p ng-show="$root.token"><a href="#/login" class="menu">Logout</a></p>
     </div>
     <hr>
     <div flex="90">
