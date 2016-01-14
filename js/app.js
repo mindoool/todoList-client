@@ -10,7 +10,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('login', {
             url:'/login',
             templateUrl: 'templates/login.html',
-            controller: "LoginController"
+            controller: "LoginController",
+            authenticate: true
         })
         .state('index', {
             url:'/',
@@ -24,6 +25,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         });
 });
 
-app.run(function($http, storage) {
+app.run(function($http, storage, $rootScope, $state) {
     $http.defaults.headers.common.Authorization = storage.get('token');
+    $rootScope.$on('$stateChangeStart', function (event, toState) {
+        // 이동할 페이지에 authenticate 값이 있는지 확인해서 라우팅한다.
+        if( toState.authenticate ){
+            $state.go('login');
+            event.preventDefault();
+        }
+
+    });
 });
