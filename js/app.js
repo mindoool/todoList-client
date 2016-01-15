@@ -8,13 +8,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
     // Now set up the states
     $stateProvider
         .state('login', {
-            url:'/login',
+            url:'/',
             templateUrl: 'templates/login.html',
             controller: "LoginController",
             authenticate: true
         })
         .state('index', {
-            url:'/',
+            url:'/index',
             templateUrl: 'templates/index.html',
             controller: "ToDoListController"
         })
