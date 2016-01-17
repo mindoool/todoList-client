@@ -68,6 +68,7 @@ app.controller('LoginController',['$scope','ApiService','$mdDialog', '$mdMedia',
             $http.post('http://localhost:11080/api/users',userData)
                 .then(function(response) {
                     console.log(response)
+                    $scope.hide()
                 });
         };
     }
