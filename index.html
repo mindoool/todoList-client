@@ -14,10 +14,14 @@
 
 <div layout="row">
     <div flex="10">
-        <p ng-show="!$root.token"><a href="#/" class="menu">Login</a></p>
-        <p><a href="#/index" class="menu">To do List</a></p>
-        <p><a href="#/saves" class="menu">Saves</a></p>
-        <p ng-show="$root.token"><a href="#/login" class="menu">Logout</a></p>
+        <!--<p ng-show="!$root.token"><a ng-href="#/" class="menu">Login</a></p>-->
+        <!--<p><a ng-href="#/index" class="menu">To do List</a></p>-->
+        <!--<p><a ng-href="#/saves" class="menu">Saves</a></p>-->
+        <!--<a ng-click="logout()" class="menu"><p ng-show="$root.token">Logout</p></a>-->
+        <md-button ng-show="!$root.token" class="md-warn" ng-href="#/">Login</md-button>
+        <md-button class="md-warn" ng-href="#/index">To do List</md-button>
+        <md-button class="md-warn" ng-href="#/saves">Saves</md-button>
+        <md-button ng-show="$root.token" class="md-warn" ng-click="logout()">Logout</md-button>
     </div>
     <hr>
     <div flex="90">

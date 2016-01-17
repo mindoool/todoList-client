@@ -16,6 +16,7 @@
             <input ng-model="user.passwordCheck" required name="passwordcheck" type="password" ng-model="user.passwordCheck" placeholder="Password Again">
             <div ng-messages="signup.passwordcheck.$error">
                 <div ng-message="required">This is required.</div>
+                <div ng-show="user.password !== user.passwordCheck">Does not match.</div>
             </div>
         </md-input-container>
         <md-button type="submit" class="md-raised md-block">Submit</md-button>
