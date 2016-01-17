@@ -45,14 +45,7 @@ app.controller('LoginController',['$scope','ApiService','$mdDialog', '$mdMedia',
         });
     };
 
-    $scope.logout = function () {
-        console.log('logout');
-        $scope.$root.token = null;
-        $http.defaults.headers.common.Authorization = null;
-        $state.go('login');
-
-    }
-    function DialogController($scope, $mdDialog, $ngMessage) {
+    function DialogController($scope, $mdDialog) {
         $scope.hide = function() {
             $mdDialog.hide();
         };
@@ -69,8 +62,8 @@ app.controller('LoginController',['$scope','ApiService','$mdDialog', '$mdMedia',
         }
         $scope.signUp = function() {
             var userData = {
-                email: $scope.user.email,
-                password: $scope.user.password
+                email:$scope.user.email,
+                password:$scope.user.password
             }
             $http.post('http://localhost:11080/api/users',userData)
                 .then(function(response) {
