@@ -10,18 +10,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('login', {
             url:'/login',
             templateUrl: 'templates/login.html',
-            controller: "LoginController",
-            authenticate: true
+            controller: "LoginController"
         })
         .state('index', {
             url:'/',
             templateUrl: 'templates/index.html',
-            controller: "ToDoListController"
+            controller: "ToDoListController",
+            authenticate: true
         })
         .state('saves', {
             url:'/saves',
             templateUrl: 'templates/save.html',
-            controller: "SaveController"
+            controller: "SaveController",
+            authenticate: true
         });
 });
 
@@ -31,9 +32,16 @@ app.run(function($http, storage, $rootScope, $state) {
     $rootScope.$on('$stateChangeStart', function (event, toState) {
         // 이동할 페이지에 authenticate 값이 있는지 확인해서 라우팅한다.
         if( toState.authenticate ){
-            $state.go('login');
+            $state.go('index');
             event.preventDefault();
         }
 
     });
+    $rootScope.logout = function () {
+        console.log('logout');
+        console.log($rootScope);
+        $rootScope.token = null;
+        $http.defaults.headers.common.Authorization = null;
+        $state.go('login');
+    }
 });

@@ -20,15 +20,6 @@ app.controller('LoginController',['$scope','ApiService','$mdDialog', '$mdMedia',
             });
     };
 
-    $scope.$root = $rootScope;
-    $scope.$root.logout = function () {
-        console.log('logout');
-        console.log($rootScope);
-        $scope.$root.token = null;
-        $http.defaults.headers.common.Authorization = null;
-        $state.go('login');
-    }
-
     $scope.status = '  ';
     $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 
